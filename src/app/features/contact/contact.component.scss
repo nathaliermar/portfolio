@@ -1,0 +1,18 @@
+/* contact.component.scss */
+.contact {
+  border-top: 1px solid var(--border);
+
+  &__cta {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+}

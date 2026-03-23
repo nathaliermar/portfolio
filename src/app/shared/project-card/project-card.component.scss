@@ -1,0 +1,57 @@
+/* project-card.component.scss */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 200ms ease;
+
+  &:hover {
+    border-color: var(--accent);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  &__links {
+    display: flex;
+    gap: 12px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  &__description {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  &__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+
+    li {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 99px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+  }
+}

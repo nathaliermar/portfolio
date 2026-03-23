@@ -1,0 +1,19 @@
+/* about.component.scss */
+.about {
+  border-top: 1px solid var(--border);
+
+  &__bio {
+    color: var(--text-muted);
+    max-width: 600px;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
+
+.section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}

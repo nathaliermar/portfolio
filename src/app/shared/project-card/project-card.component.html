@@ -1,0 +1,15 @@
+<article class="card">
+  <header class="card__header">
+    <h3 class="card__title">{{ project.title }}</h3>
+    <div class="card__links">
+      <a [href]="project.repoUrl" target="_blank" rel="noopener">Repo ↗</a>
+      <a *ngIf="project.demoUrl" [href]="project.demoUrl" target="_blank" rel="noopener">Demo ↗</a>
+    </div>
+  </header>
+
+  <p class="card__description">{{ project.description }}</p>
+
+  <ul class="card__stack" role="list">
+    <li *ngFor="let tech of project.stack">{{ tech }}</li>
+  </ul>
+</article>
