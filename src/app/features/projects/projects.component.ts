@@ -35,7 +35,7 @@ export class ProjectsComponent {
     description: 'This portfolio. Built from scratch with Angular 17+ Standalone Components, SCSS design tokens and deployed on Vercel.',
     stack: ['Angular', 'TypeScript', 'SCSS'],
     repoUrl: 'https://github.com/nathaliermar/portfolio',
-    demoUrl: 'https://nathaliermar.vercel.app'
+    demoUrl: 'https://nathaliemartines.vercel.app/'
   }
 ];
 }
