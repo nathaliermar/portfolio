@@ -1,0 +1,19 @@
+<section id="videos" class="videos">
+  <h2 class="section-title">Tech <span>Videos</span></h2>
+  <div class="divider"></div>
+
+  <div class="videos__grid">
+    <mat-card *ngFor="let video of videos" class="video-card">
+      <div class="video-card__thumb">
+        <mat-icon>{{ video.icon }}</mat-icon>
+      </div>
+      <mat-card-content class="video-card__body">
+        <h4 class="video-card__title">{{ video.title }}</h4>
+        <p class="video-card__desc">{{ video.description }}</p>
+        <mat-chip-set>
+          <mat-chip>{{ video.tag }}</mat-chip>
+        </mat-chip-set>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

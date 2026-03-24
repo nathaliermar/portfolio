@@ -1,0 +1,65 @@
+.videos {
+  background: var(--bg);
+  padding: 100px 80px;
+}
+
+.videos__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.video-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px !important;
+  box-shadow: none !important;
+  transition: border-color 0.25s, transform 0.25s;
+
+  &:hover {
+    border-color: var(--accent) !important;
+    transform: translateY(-4px);
+  }
+
+  &__thumb {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border);
+
+    mat-icon {
+      font-size: 48px;
+      width: 48px;
+      height: 48px;
+      color: var(--accent);
+    }
+  }
+
+  &__body {
+    padding: 20px !important;
+  }
+
+  &__title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  &__desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  // chip accent color
+  mat-chip {
+    background: rgba(247, 197, 208, 0.08) !important;
+    color: var(--accent) !important;
+    border: 1px solid rgba(247, 197, 208, 0.18) !important;
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+  }
+}
