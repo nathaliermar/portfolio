@@ -1,5 +1,10 @@
-/* project-card.component.scss */
+:host {
+  display: block;
+  height: 100%;
+}
+
 .card {
+  height: 100%;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -40,6 +45,7 @@
   }
 
   &__stack {
+    margin-top: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
