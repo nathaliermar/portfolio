@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeroComponent } from './features/hero/hero.component';
 import { AboutComponent } from './features/about/about.component';
 import { ProjectsComponent } from './features/projects/projects.component';
@@ -11,7 +11,7 @@ import { NavComponent } from './shared/nav/nav.component';
   standalone: true,
   imports: [HeroComponent, AboutComponent, ProjectsComponent, ContactComponent, VideosComponent, NavComponent],
   template: `
-    <app-nav /> 
+    <app-nav />
     <main>
       <app-hero />
       <app-about />
@@ -21,4 +21,8 @@ import { NavComponent } from './shared/nav/nav.component';
     </main>
   `
 })
-export class AppComponent { }
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+}
