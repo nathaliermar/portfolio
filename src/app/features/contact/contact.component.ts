@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -12,7 +12,7 @@ interface ContactLink {
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [NgFor, NgIf, MatButtonModule, MatIconModule],
+  imports: [NgFor, MatButtonModule, MatIconModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
