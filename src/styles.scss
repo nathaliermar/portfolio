@@ -1,4 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$pink-palette: (
+  50: #fde8ed,
+  100: #f7c5d0,
+  200: #f0a0b5,
+  300: #e8799a,
+  400: #e05a82,
+  500: #f08da3,
+  600: #c4637a,
+  700: #a84d63,
+  800: #8c3a4e,
+  900: #6e2639,
+  contrast: (500: white,
+    600: white,
+    700: white,
+  )
+);
+
+$portfolio-theme: mat.define-theme((color: (theme-type: dark,
+        primary: mat.$rose-palette,
+      ),
+      typography: (brand-family: 'Inter',
+        plain-family: 'Inter',
+      ),
+      density: (scale: 0),
+    ));
+
+html {
+  @include mat.all-component-themes($portfolio-theme);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap');
 
 *,
 *::before,
@@ -9,15 +43,16 @@
 }
 
 :root {
-  --bg:      #12100f;  /* levemente marrom */
+  --bg: #12100f;
+  --bg3: #1a1a24;
   --surface: #1d1a18;
-  --border:  #2e2a27;
-  --accent:     #f08da3;
-  --text:       #e8e8e8;
+  --border: #2e2a27;
+  --accent: #f08da3;
+  --text: #e8e8e8;
   --text-muted: #888888;
-  --radius:     8px;
-  --font:       'Inter', sans-serif;
-  --max-width:  860px;
+  --radius: 8px;
+  --font: 'Inter', sans-serif;
+  --max-width: 860px;
 }
 
 html {
@@ -30,6 +65,7 @@ body {
   font-family: var(--font);
   font-size: 1rem;
   line-height: 1.6;
+  margin: 0;
 }
 
 a {
@@ -45,4 +81,61 @@ section {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 80px 24px;
+}
+
+.mat-mdc-card {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: none !important;
+}
+
+.mat-mdc-chip {
+  background-color: rgba(240, 141, 163, 0.08) !important;
+  color: var(--accent) !important;
+  border: 1px solid rgba(240, 141, 163, 0.2) !important;
+}
+
+.mat-mdc-outlined-button {
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+
+  &:hover {
+    color: var(--accent) !important;
+    border-color: var(--accent) !important;
+  }
+}
+
+.mat-mdc-button {
+  color: var(--text-muted) !important;
+
+  &:hover {
+    color: var(--accent) !important;
+  }
+}
+
+.section-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  margin-bottom: 16px;
+
+  span {
+    color: var(--accent);
+  }
+}
+
+.divider {
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 48px;
 }
