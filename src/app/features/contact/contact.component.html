@@ -9,14 +9,13 @@
     </p>
 
     <div class="contact__links">
-      <a
-        *ngFor="let link of links"
-        [href]="link.href"
-        [target]="link.icon === 'email' ? '_self' : '_blank'"
-        rel="noopener"
-        mat-stroked-button
-        class="contact__btn"
-      >
+      <button mat-stroked-button class="contact__btn" (click)="copyEmail()">
+        <mat-icon>{{ emailCopied ? 'check' : 'email' }}</mat-icon>
+        {{ emailCopied ? 'Copied!' : 'Email' }}
+      </button>
+
+      <a *ngFor="let link of links" [href]="link.href" target="_blank" rel="noopener" mat-stroked-button
+        class="contact__btn">
         <mat-icon>{{ link.icon }}</mat-icon> {{ link.label }}
       </a>
     </div>
