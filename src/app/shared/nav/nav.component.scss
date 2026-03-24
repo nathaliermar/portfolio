@@ -1,0 +1,124 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 60px;
+  z-index: 1000;
+  pointer-events: none;
+  background: transparent;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  border-right: 1px solid transparent;
+
+  &__trigger {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: var(--text-muted);
+    pointer-events: auto;
+
+    .dash {
+      width: 22px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+  }
+
+  &:hover:not(:active) {
+    border-right-color: rgba(255, 255, 255, 0.03);
+  }
+
+  &__content {
+    width: 260px;
+    top: 12px;
+    left: 12px;
+    border-radius: 12px;
+    box-shadow: 20px 0 50px rgba(0, 0, 0, 0.3);
+    height: calc(100vh - 24vh);
+    background: rgba(18, 16, 15, 0.95);
+    backdrop-filter: blur(24px);
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.4s, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      visibility 0s linear 0.4s;
+    pointer-events: none;
+  }
+
+  &:hover {
+    width: 280px;
+
+    .sidebar__trigger {
+      opacity: 0;
+      transform: translateY(-50%) translateX(-10px);
+    }
+
+    .sidebar__content {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+  }
+
+  &__logo {
+    display: block;
+    font-family: 'Fira Code', monospace;
+    color: var(--accent);
+    font-size: 16px;
+    padding-left: 12px;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    list-style: none;
+
+    li a[mat-button] {
+      width: 100%;
+      justify-content: flex-start;
+      color: var(--text-muted);
+      height: 44px;
+      padding: 0 12px !important;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+
+      mat-icon {
+        margin-right: 12px;
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+        color: var(--text-muted);
+        transition: color 0.2s;
+      }
+
+      .label {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      &:hover {
+        background: rgba(240, 141, 163, 0.08) !important;
+        color: var(--accent) !important;
+
+        mat-icon {
+          color: var(--accent) !important;
+        }
+      }
+    }
+  }
+}
