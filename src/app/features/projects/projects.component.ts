@@ -16,7 +16,7 @@ export class ProjectsComponent {
     title: 'Medical Request Service — Healthcare Authorization Platform',
     description: 'Production-ready Spring Boot 3 microservice for healthcare procedure authorization, built with Hexagonal Architecture, JWT security, and event-driven status tracking via RabbitMQ.',
     stack: ['Java 21', 'Spring Boot 3', 'Hexagonal Architecture', 'Spring Data JPA', 'PostgreSQL', 'Spring Security', 'JWT', 'RabbitMQ', 'MapStruct', 'OpenAPI 3.0', 'JUnit 5', 'Mockito', 'JaCoCo', 'Docker', 'GitHub Actions'],
-    repoUrl: 'https://github.com/nathaliermar/' // Soon
+    repoUrl: 'https://github.com/nathaliermar/medical-request-platform'
   },
     {
     title: 'Parking Control API',
