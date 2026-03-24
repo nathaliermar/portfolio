@@ -1,10 +1,24 @@
-<!-- contact.component.html -->
-<section class="contact">
-  <h2 class="section-title">Contacts</h2>
+<section id="contact" class="contact">
+  <h2 class="section-title">Let's <span>Talk</span></h2>
+  <div class="divider"></div>
 
-  <ul class="contact__links" role="list">
-    <li><a [href]="'mailto:' + email">{{ email }}</a></li>
-    <li><a [href]="github"   target="_blank" rel="noopener">GitHub</a></li>
-    <li><a [href]="linkedin" target="_blank" rel="noopener">LinkedIn</a></li>
-  </ul>
+  <div class="contact__inner">
+    <p class="contact__desc">
+      Open to remote opportunities in the US and globally.<br>
+      Building with AI — not just talking about it.
+    </p>
+
+    <div class="contact__links">
+      <a
+        *ngFor="let link of links"
+        [href]="link.href"
+        target="_blank"
+        rel="noopener"
+        mat-stroked-button
+        class="contact__btn"
+      >
+        <mat-icon>{{ link.icon }}</mat-icon> {{ link.label }}
+      </a>
+    </div>
+  </div>
 </section>
