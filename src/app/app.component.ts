@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, afterNextRender } from '@angular/core';
 import { HeroComponent } from './features/hero/hero.component';
 import { AboutComponent } from './features/about/about.component';
 import { ProjectsComponent } from './features/projects/projects.component';
@@ -21,8 +21,9 @@ import { NavComponent } from './shared/nav/nav.component';
     </main>
   `
 })
-export class AppComponent implements OnInit {
-  ngOnInit(): void {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+export class AppComponent {
+  constructor() {
+    afterNextRender(() => window.scrollTo(0, 0));
   }
-}
+}
+
