@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
   readonly bio = `
-      3+ years of experience in Java and Spring Boot,
+      4 years of experience in Java and Spring Boot,
 focused on microservices, hexagonal architecture, and high-availability systems.
       Currently seeking international remote opportunities.
   `;
